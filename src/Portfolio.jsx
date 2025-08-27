@@ -1,11 +1,10 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Github, Linkedin, Mail, ExternalLink, Code, Users, Briefcase } from "lucide-react";
 import { useState } from "react";
 
 // Cursor Customizado
-function CustomCursor() {
+/*function CustomCursor() {
   const cursorRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function CustomCursor() {
       className="fixed w-6 h-6 bg-sky-500 rounded-full mix-blend-difference pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition duration-150"
     ></div>
   );
-}
+}*/
 
 // Seção com reveal animado
 function Section({ children }) {
