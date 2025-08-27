@@ -91,31 +91,42 @@ export default function PortfolioPremium() {
       </header>
 
       {/* HERO */}
-      <section className="h-screen flex flex-col items-center justify-center text-center px-6">
-        <motion.h1
-          className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          Olá, eu sou o Luan Santos 🚀
-        </motion.h1>
-        <p className="mt-4 text-lg md:text-2xl text-slate-600 dark:text-slate-300">
-          Desenvolvedor Salesforce
-        </p>
-        <motion.div
-          className="mt-8 flex gap-4"
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring" }}
-        >
-          <a href="#projetos" className="px-6 py-3 bg-sky-500 text-white rounded-xl shadow-lg hover:bg-sky-600 transition">
-            Ver Projetos
-          </a>
-          <a href="#contato" className="px-6 py-3 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-            Contato
-          </a>
-        </motion.div>
-      </section>
+    <section className="h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+      {/* Imagem de fundo com blur */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
+        style={{ backgroundImage: "url('https://wallpapers.com/images/hd/universe-pictures-582g1mwqhrunwtn2.jpg')" }}
+      ></div>
+
+      {/* Overlay escura pra destacar texto */}
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      {/* Conteúdo fica acima, sem blur */}
+      <motion.h1
+        className="relative text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        Olá, eu sou o Luan Santos 🚀
+      </motion.h1>
+      <p className="relative mt-4 text-lg md:text-2xl text-white">
+        Desenvolvedor Salesforce
+      </p>
+      <motion.div
+        className="relative mt-8 flex gap-4"
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring" }}
+      >
+        <a href="#projetos" className="px-6 py-3 bg-sky-500 text-white rounded-xl shadow-lg hover:bg-sky-600 transition">
+          Ver Projetos
+        </a>
+        <a href="#contato" className="px-6 py-3 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          Contato
+        </a>
+      </motion.div>
+    </section>
+
 
       {/* SOBRE */}
       <Section>
