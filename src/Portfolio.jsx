@@ -95,7 +95,7 @@ export default function PortfolioPremium() {
       {/* Imagem de fundo com blur */}
       <div
         className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
-        style={{ backgroundImage: "url('https://wallpapers.com/images/hd/universe-pictures-582g1mwqhrunwtn2.jpg')" }}
+        style={{ backgroundImage: "url('https://wallpapers.com/images/high/blue-gradient-background-vweynffwc05aizfr.webp')" }}
       ></div>
 
       {/* Overlay escura pra destacar texto */}
