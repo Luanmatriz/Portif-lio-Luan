@@ -126,12 +126,12 @@ const handleSubmit = async (e) => {
           <div className="mt-10 space-y-6 text-left border-l-4 border-sky-500 pl-6">
             <div>
               <h4 className="font-semibold text-sky-600">12/2024 - Atual</h4>
-              <p class = "cargo"><strong>Desenvolvedor  Salesforce Junior - MSERV</strong></p>
+              <p className = "cargo"><strong>Desenvolvedor  Salesforce Junior - MSERV</strong></p>
               <p>Desenvolvi soluções com foco em Sales Cloud e Service Cloud. Criei classes, triggers e test classes em Apex para automatizar processos comerciais e de atendimento. Implementei Flows, Process Builder e regras de validação. Colaborei em integrações REST APIs, lidando com JSON e autenticação. Participei de reuniões técnicas para entender demandas e propor melhorias.</p>
             </div>
             <div>
               <h4 className="font-semibold text-sky-600">09/2024 - 12/2024</h4>
-               <p class = "cargo"><strong>Desenvolvedor  Salesforce Junior - MSERV</strong></p>
+               <p className = "cargo"><strong>Desenvolvedor  Salesforce Junior - MSERV</strong></p>
                <p>Iniciei com administração básica, como criação e customização de objetos, campos, layouts e regras de validação. Ultilizei o Flow Buider para corrigir e automatizar processos. Desenvolvi classes e triggers em Apex. Participei da documentação de requisitos e de reuniões com os usuários e desenvolvedores para atender as demandas e propor soluções.</p>
             </div>
           </div>
