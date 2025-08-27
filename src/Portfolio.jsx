@@ -3,8 +3,11 @@ import { useInView } from "react-intersection-observer";
 import { Github, Linkedin, Mail, ExternalLink, Code, Users, Briefcase } from "lucide-react";
 import { useState } from "react";
 
-// Cursor Customizado
-/*function CustomCursor() {
+// Cursor Customizado - Comentado para evitar erro
+/*
+import { useEffect, useRef } from "react";
+
+function CustomCursor() {
   const cursorRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +26,8 @@ import { useState } from "react";
       className="fixed w-6 h-6 bg-sky-500 rounded-full mix-blend-difference pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition duration-150"
     ></div>
   );
-}*/
+}
+*/
 
 // Seção com reveal animado
 function Section({ children }) {
@@ -42,37 +46,36 @@ function Section({ children }) {
 }
 
 export default function PortfolioPremium() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [enviado, setEnviado] = useState(false);
 
-const [form, setForm] = useState({ name: "", email: "", message: "" });
-const [enviado, setEnviado] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setForm((prev) => ({ ...prev, [name]: value }));
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("message", form.message);
+    formData.append("_captcha", "false");
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const formData = new FormData();
-  formData.append("name", form.name);
-  formData.append("email", form.email);
-  formData.append("message", form.message);
-  formData.append("_captcha", "false");
-
-  try {
-    await fetch("https://formsubmit.co/luanmattriz@gmail.com", {
-      method: "POST",
-      body: formData,
-    });
-    setEnviado(true);
-  } catch (err) {
-    console.error("Erro ao enviar:", err);
-  }
-};
+    try {
+      await fetch("https://formsubmit.co/luanmattriz@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      setEnviado(true);
+    } catch (err) {
+      console.error("Erro ao enviar:", err);
+    }
+  };
 
   return (
     <div className="relative min-h-screen w-screen font-inter bg-gradient-to-b from-white via-sky-50 to-sky-100 dark:from-[#05060a] dark:to-[#02040a] text-slate-900 dark:text-slate-100 overflow-x-hidden">
-      <CustomCursor />
+      {/* <CustomCursor /> Removido para evitar erro */}
 
       {/* NAVBAR Salesforce Style */}
       <header className="fixed w-full top-0 bg-white/70 dark:bg-[#05060a]/70 backdrop-blur-md shadow-md z-40">
@@ -125,13 +128,13 @@ const handleSubmit = async (e) => {
           <div className="mt-10 space-y-6 text-left border-l-4 border-sky-500 pl-6">
             <div>
               <h4 className="font-semibold text-sky-600">12/2024 - Atual</h4>
-              <p class = "cargo"><strong>Desenvolvedor  Salesforce Junior - MSERV</strong></p>
+              <p className="cargo"><strong>Desenvolvedor Salesforce Junior - MSERV</strong></p>
               <p>Desenvolvi soluções com foco em Sales Cloud e Service Cloud. Criei classes, triggers e test classes em Apex para automatizar processos comerciais e de atendimento. Implementei Flows, Process Builder e regras de validação. Colaborei em integrações REST APIs, lidando com JSON e autenticação. Participei de reuniões técnicas para entender demandas e propor melhorias.</p>
             </div>
             <div>
               <h4 className="font-semibold text-sky-600">09/2024 - 12/2024</h4>
-               <p class = "cargo"><strong>Desenvolvedor  Salesforce Junior - MSERV</strong></p>
-               <p>Iniciei com administração básica, como criação e customização de objetos, campos, layouts e regras de validação. Ultilizei o Flow Buider para corrigir e automatizar processos. Desenvolvi classes e triggers em Apex. Participei da documentação de requisitos e de reuniões com os usuários e desenvolvedores para atender as demandas e propor soluções.</p>
+              <p className="cargo"><strong>Desenvolvedor Salesforce Junior - MSERV</strong></p>
+              <p>Iniciei com administração básica, como criação e customização de objetos, campos, layouts e regras de validação. Utilizei o Flow Builder para corrigir e automatizar processos. Desenvolvi classes e triggers em Apex. Participei da documentação de requisitos e de reuniões com os usuários e desenvolvedores para atender as demandas e propor soluções.</p>
             </div>
           </div>
         </div>
@@ -146,18 +149,17 @@ const handleSubmit = async (e) => {
               {
                 name: "CRM Salesforce",
                 img: "https://source.unsplash.com/400x300/?salesforce,crm",
-                video: "https://www.youtube.com/embed/U6KHIKeeJc0", // vídeo local na pasta public/videos/
+                video: "https://www.youtube.com/embed/U6KHIKeeJc0",
               },
               {
                 name: "Integração API",
                 img: "https://source.unsplash.com/400x300/?api,code",
-                video: "https://www.youtube.com/embed/y1k5KTSnPJo", // vídeo embed do YouTube
+                video: "https://www.youtube.com/embed/y1k5KTSnPJo",
               },
               {
                 name: "Dashboard Analytics",
                 img: "https://source.unsplash.com/400x300/?dashboard,data",
                 video: "https://www.youtube.com/embed/zV1483QUva4",
-                // Sem vídeo para este projeto
               },
             ].map((proj, i) => (
               <motion.div
@@ -167,7 +169,6 @@ const handleSubmit = async (e) => {
               >
                 {proj.video ? (
                   proj.video.includes("youtube.com/embed") ? (
-                    // Vídeo do YouTube embedado via iframe
                     <iframe
                       src={proj.video}
                       title={proj.name}
@@ -177,7 +178,6 @@ const handleSubmit = async (e) => {
                       allowFullScreen
                     />
                   ) : (
-                    // Vídeo local ou link direto - tag video HTML5
                     <video
                       src={proj.video}
                       controls
@@ -188,7 +188,6 @@ const handleSubmit = async (e) => {
                     />
                   )
                 ) : (
-                  // Caso não tenha vídeo, mostra imagem
                   <img src={proj.img} alt={proj.name} className="w-full h-48 object-cover" />
                 )}
 
@@ -198,6 +197,7 @@ const handleSubmit = async (e) => {
                     {proj.name} com funcionalidades avançadas e design moderno.
                   </p>
                   <a href="#" className="mt-4 inline-flex items-center gap-2 text-sky-500 hover:underline">
+                    {/* Link ou botão pode ir aqui */}
                   </a>
                 </div>
               </motion.div>
@@ -205,8 +205,6 @@ const handleSubmit = async (e) => {
           </div>
         </div>
       </Section>
-
-
 
       {/* SKILLS */}
       <Section>
