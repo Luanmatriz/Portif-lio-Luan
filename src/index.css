@@ -1,82 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luan Santos - Desenvolvedor Salesforce</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- CSS externo -->
+</head>
+<body class="bg-slate-900 text-white overflow-x-hidden">
+    <!-- NAVIGATION AND OTHER SECTIONS GO HERE -->
+    <nav class="fixed top-0 w-full glass-effect z-50">
+        <!-- Add your navbar code here -->
+    </nav>
 
-/* Seus estilos globais extras */
+    <!-- HERO SECTION -->
+    <section id="inicio" class="min-h-screen gradient-bg flex items-center justify-center pt-20">
+        <!-- Hero content -->
+    </section>
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-slate-800">
+        <!-- About content -->
+    </section>
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: transparent; /* ✅ deixa transparente */
+    <!-- Experiencia, Projetos, Habilidades, Contato etc. -->
+    <!-- Add all other sections here -->
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    <footer class="py-8 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cloud text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                        Luan Santos
+                    </span>
+                </div>
+                <p class="text-gray-400 text-center">
+                    © 2024 Luan Santos Nascimento. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-html, body, #root {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: transparent; /* para não conflitar */
-}
+    <!-- Link for external JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
