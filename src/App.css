@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,4 +41,101 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Animações de Transição de Hover */
+a {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+a:hover {
+  transform: scale(1.05);
+  color: #38bdf8; /* Cor do hover */
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #38bdf8; /* Cor do hover no botão */
+  transform: scale(1.05);
+}
+
+/* Animations and Effects for Project Cards */
+.motional-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.motional-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Parallax Effect */
+.hero-bg {
+  transition: transform 0.3s ease-out;
+}
+
+.hero-bg.parallax {
+  transform: translateY(-10%); /* Ajuste de movimento parallax */
+}
+
+/* Formulário de Contato */
+input,
+textarea,
+button {
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 120, 255, 0.5);
+}
+
+button:hover {
+  background-color: #38bdf8;
+  transform: scale(1.05);
+}
+
+/* Animações para as Seções */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para os ícones sociais */
+.social-icons a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: #38bdf8;
+}
+
+/* Animação de Footer */
+footer {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+footer.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+footer.hidden {
+  transform: translateY(20px);
+  opacity: 0;
 }
