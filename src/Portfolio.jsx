@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
-import "./styles.css"; // Certifique-se de que o arquivo CSS está sendo importado corretamente
+import { Github, Linkedin, Mail } from "lucide-react"; // Ícones
+import "./App.css";  // Importando o App.css
+import "./index.css";  // Importando o index.css
 
 const Portfolio = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
