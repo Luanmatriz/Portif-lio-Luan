@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Users } from "lucide-react"; // Exemplo de ícones
-import "./styles.css"; // Importando o arquivo de estilos
+import { Github, Linkedin, Mail } from "lucide-react";
+import "./styles.css"; // Certifique-se de que o arquivo CSS está sendo importado corretamente
 
-// Função para rolagem suave
-const scrollToSection = (sectionId) => {
-  document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
-};
-
-// Componente Principal do Portfólio
 const Portfolio = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [enviado, setEnviado] = useState(false);
 
+  // Função para rolagem suave
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Ativar animações quando as seções aparecem na tela
   useEffect(() => {
-    // Ativa animações quando as seções aparecem na tela
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -56,49 +55,35 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio-container">
-      {/* Navegação */}
+      {/* NAVBAR */}
       <nav className="navbar">
         <div className="logo">Luan Santos</div>
         <ul className="nav-links">
           <li>
-            <a href="#inicio" onClick={() => scrollToSection("inicio")}>
-              Início
-            </a>
+            <a href="#inicio" onClick={() => scrollToSection("inicio")}>Início</a>
           </li>
           <li>
-            <a href="#sobre" onClick={() => scrollToSection("sobre")}>
-              Sobre
-            </a>
+            <a href="#sobre" onClick={() => scrollToSection("sobre")}>Sobre</a>
           </li>
           <li>
-            <a href="#projetos" onClick={() => scrollToSection("projetos")}>
-              Projetos
-            </a>
+            <a href="#projetos" onClick={() => scrollToSection("projetos")}>Projetos</a>
           </li>
           <li>
-            <a href="#contato" onClick={() => scrollToSection("contato")}>
-              Contato
-            </a>
+            <a href="#contato" onClick={() => scrollToSection("contato")}>Contato</a>
           </li>
         </ul>
       </nav>
 
-      {/* Hero */}
+      {/* HERO */}
       <section id="inicio" className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">Olá, eu sou o Luan Santos</h1>
           <p className="hero-description">Desenvolvedor Salesforce</p>
           <div className="hero-buttons">
-            <button
-              onClick={() => scrollToSection("projetos")}
-              className="btn-primary"
-            >
+            <button onClick={() => scrollToSection("projetos")} className="btn-primary">
               Ver Projetos
             </button>
-            <button
-              onClick={() => scrollToSection("contato")}
-              className="btn-secondary"
-            >
+            <button onClick={() => scrollToSection("contato")} className="btn-secondary">
               Contato
             </button>
           </div>
@@ -117,7 +102,6 @@ const Portfolio = () => {
       <section id="projetos" className="section projects-section">
         <h2>Meus Projetos</h2>
         <div className="project-cards">
-          {/* Cards de projetos */}
           <div className="project-card">
             <h3>Projeto 1</h3>
             <p>Descrição do projeto</p>
